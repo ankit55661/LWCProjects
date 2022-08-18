@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Simple Calculator">
+      <lightning-icon icon-name='standard:duration_downscale' size='small' title='duration_downscale' class="mainIcon"></lightning-icon>
+      <div>
+        <lightning-input name="firstNum" label="First Number" value={num1} onchange={handleChange} placeholder="Enter Number..."></lightning-input>
+        <lightning-input name="secondNum" label="Second Number" value={num2} onchange={handleChange} placeholder="Enter Number..."></lightning-input>
+      </div> 
+      <div>
+        <lightning-button name="sum" label="SUM" icon-name="utility:add" onclick={calculateOperation}></lightning-button>
+        <lightning-button name="sub" label="SUB" icon-name="utility:dash" onclick={calculateOperation}></lightning-button>
+        <lightning-button name="mul" label="MUL" icon-name="utility:close" onclick={calculateOperation}></lightning-button>
+        <lightning-button name="div" label="DIV" icon-name="utility:chevronleft" onclick={calculateOperation}></lightning-button>
+        <lightning-button name="mod" label="MOD" icon-name="utility:chevronright" onclick={calculateOperation}></lightning-button>
+        <lightning-button label="DEL" icon-name="utility:skip_back" onclick={calculateDel}></lightning-button>
+      </div>
+      <div>
+        Result is: {res}
+      </div>
+    </lightning-card>   
+</template>
