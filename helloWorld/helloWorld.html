@@ -1,0 +1,19 @@
+<template>
+    <!-- Markup -->
+    <lightning-card title="Our First LWC Component">
+        <div>
+            <h1>Hello World! This is our first applicaiton in LWC!</h1>
+        </div>
+    </lightning-card>
+    <lightning-card>
+        <lightning-input type="text" name='firstName' label="Enter your First Name" placeholder="Enter your First Name" onchange={handleChange}></lightning-input>
+        <lightning-input type="text" name='lastName' label="Enter your Last name" placeholder="Enter your Last Name" onchange={handleChange}></lightning-input>
+        <br/>
+        <h2>Hello {firstName} {lastName}</h2>
+        <lightning-button label="Click to Capitalize the name" onclick={handleClickUpperCase}></lightning-button>
+        <lightning-input type="checkbox" label="Click to reveal Capital Name" onchange={checkboxChangeHandler}></lightning-input> 
+        <template if:true={showName}>
+            <h2> Capitalized Full Name : {upperCaseName}</h2>
+        </template>
+    </lightning-card>
+</template>
