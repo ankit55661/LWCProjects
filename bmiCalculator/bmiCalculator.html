@@ -1,0 +1,32 @@
+<template>
+    <lightning-card title="BMI CALCULATOR" style="background-color: rgb(115, 192, 243);">
+    <lightning-layout>
+        <lightning-layout-item>
+            <lightning-input style="padding: 5px;" type="text" name="Name" placeholder="Enter Your Name" onchange={handleNameChange} label="Enter your Name"></lightning-input>    
+        </lightning-layout-item>
+        <lightning-layout-item>
+            <lightning-input style="padding: 5px;" type="text" name="height" placeholder="Enter Height in Inches" onchange={handleChange} label="Enter your height"></lightning-input>    
+        </lightning-layout-item>
+        <lightning-layout-item>
+            <lightning-input style="padding: 5px;" type="text" name="weight" onchange={handleChange} placeholder="Enter weight in Lbs" label="Enter your weight"></lightning-input>    
+        </lightning-layout-item>
+    </lightning-layout>
+    <br/>
+<lightning-button class="slds-align_absolute-center" onclick={calculateBMI} label="Calculate"></lightning-button>
+    <div class="slds-align_absolute-center">
+        <p>Your BMI is {result}</p> <br/>
+        <p>You are: {message}</p> 
+        BMI : {result}
+        
+    </div>
+    <div class="slds-align_absolute-center">
+        <p>{message}</p>
+    </div>
+    <template if:true={bmiRecords.data}>
+        Name: <lightning-formatted-text value={fetchName}></lightning-formatted-text><br/>
+        BMI: <lightning-formatted-number value={fetchBMI}></lightning-formatted-number><br/>
+        Message: <lightning-formatted-text value={fetchMessage}></lightning-formatted-text><br/>
+    </template>
+
+</lightning-card>
+</template>
