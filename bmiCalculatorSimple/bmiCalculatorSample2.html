@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="BMI Calculator">
+        <!-- 3 Input - Name, Height, Weight -->
+        <lightning-input label="Enter your Name" type="text" name="userName" value={name} placeholder="Enter your Name here" onchange={nameChangeHandler}></lightning-input>
+        <lightning-input label="Enter Your Height" type="text" name="height" value={height} placeholder="Enter your height in meter here" onchange={changeHandler}></lightning-input>
+        <lightning-input label="Enter Weight" type="text" name="weight" value={weight} placeholder="Enter your Weight in Kgs here" onchange={changeHandler}></lightning-input>
+        <lightning-button label="Calculate BMI" onclick={calculateBMI}></lightning-button>
+        <br/>
+        <template if:true={toShow}>
+            Hello {name}, your BMI is: {bmiResult}
+            <br/>
+            <lightning-button label="Reset" onclick={reset}></lightning-button>
+        </template>
+    </lightning-card>
+</template>
